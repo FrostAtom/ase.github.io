@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en">
     <head>
         <title>Atom Script Engine</title>
         <meta charset="utf-8">
@@ -8,50 +8,83 @@
         <meta name="description" content="Atom Script Engine - private scripting framework for World of Warcraft 3.3.5a">
         <meta name="author" content="boredatom">
         <link rel="icon" href="https://icons.getbootstrap.com/icons/gear.svg">
-        <link rel="canonical" href="https://ase.github.io/">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <link href="cover.css" rel="stylesheet">
-        <script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+        <link href="style.css" rel="stylesheet">
     </head>
-    <body class="d-flex h-100 text-center text-white bg-dark user-select-none">
-        <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-            <header class="mb-auto align-bottom">
-                <div>
-                    <h3 class="float-md-start mb-0">
-                        <!-- <a class="btn btn-link">Atom Script Engine</a> -->
-                        <a class="text-white text-decoration-none" href=".">Atom Script Engine</a>
-                    </h3>
-                    <nav class="nav nav-masthead justify-content-center float-md-end">
-                        <a class="nav-link" href="/GetStarted/">Get Started</a>
-                        <a class="nav-link" href="/API_Reference/">API Reference</a>
-                        <a class="nav-link" href="/PatchNotes/">Patch Notes</a>
-                    </nav>
+    <body class="text-white h-100 w-100">
+        <header class="navbar navbar-expand-md navbar-dark fixed-top bg-dark user-select-none px-2 opacity-90">
+            <div class="container-fluid">
+                <a class="navbar-brand px-3" href=".">Atom Script Engine</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-elabel="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/Get_Started/">Get Started</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/API_Reference/">API Reference</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/Patch_Notes/">Patch Notes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="/Patch_Notes/">Pricing</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+
+                    </form>
                 </div>
-            </header>
-            <main>
-                <h2>Atom Script Engine</h2>
-                <h6>Multifunctional private utility for World of Warcraft 3.3.5a, aimed at automating the gameplay</h6>
-                <br>
+            </div>
+            <!-- <nav class="container-xxl flex-wrap flex-md-nowrap" aria-label="Main navigation">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Atom Script Engine</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/Get_Started/">Get Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/API_Reference/">API Reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="/Patch_Notes/">Patch Notes</a>
+                            </li>
+                        </ul>
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav> -->
+        </header>
+        <div class="blurred-box text-center py-5 px-3">
+            <h3 class="text-center">Private scripts framework for World of Warcraft 3.3.5a, targeted for PvP and gameplay automation.</h3><br>
+            <div class="text-start">
                 <small>
-                    - Works on all private servers - Warmane, WowCircle, Sirus and other.<br>
-                    - Cannot be detected by the capabilities of the Warden.<br>
                     - More than 50 API, making it possible to automate the gameplay entirely. With a special focus on developing PvP scripts and improving the player's gaming experience.<br>
+                    - Works on all private servers - warmane.com, wowcircle.com, sirus.su, etc.<br>
+                    - Reliable protection against warden-anti cheat.<br>
                     - Active support from the Russian Speaking development team.
                 </small>
-                
-                <p class="lead p-3">
-                    <a href="https://t.me/boredatom" class="btn btn-lg btn-secondary fw-bold border-white bg-white">
-                        <img src="https://icons.getbootstrap.com/icons/chat-left-text.svg">
-                        Contact for buy
-                    </a>
-                </p>
-            </main>
-            <footer class="mt-auto text-white-50">
-                <p>
-                    Created by <a href="https://t.me/boredatom" class="text-white">boredatom</a>. Join us at  <a href="https://t.me/wow_soft" class="text-white">telegram</a> or <a href="https://vk.com/wow_soft" class="text-white">VK</a>
-                </p>
-            </footer>
+            </div>
         </div>
-        <!-- <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script> -->
+        <!-- <p class="text-end mx-5 my-1">
+            Our community: 
+            <a href="https://yt.vu/+wow_soft" class="text-white">YouTube</a>,
+            <a href="https://vk.com/wow_soft" class="text-white">VK</a>,
+            <a href="https://discord.gg/E59kAcnHmA" class="text-white">Discord</a>,
+            <a href="https://t.me/wow_soft" class="text-white">Telegram</a>
+        </p> -->
+        <canvas id="matrix"></canvas>
+        <script src="https://getbootstrap.com//docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script src="javascript.js"></script>
+        <script async src="https://www.google-analytics.com/analytics.js"></script>
     </body>
 </html>
