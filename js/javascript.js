@@ -9,6 +9,10 @@ const columns = 120;
 var drops = [];
 var font_size;
 
+setInterval(draw, 33);
+recalculateVars()
+window.addEventListener("resize", recalculateVars);
+
 function recalculateVars() {
 	c.height = window.innerHeight;
 	c.width = window.innerWidth;
@@ -32,23 +36,34 @@ function draw() {
 	}
 }
 
-setInterval(draw, 33);
-recalculateVars()
-window.addEventListener("resize", recalculateVars);
-
 /*
 	Last Update
 */
-const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const lastUpdate = document.getElementById("LastUpdate")
 const request = new XMLHttpRequest();
 request.onload = function () {
 	var json = JSON.parse(this.responseText);
 	var lastCommit = json[0];
 	var message = lastCommit.commit.message;
-	var date = new Date(lastCommit.commit.author.date);
-	var fmtDate = date.getDate() + " " + MONTH_NAMES[date.getMonth()];
-	lastUpdate.append("Site updated: " + fmtDate + " (" + message + ")");
+	var lastUpdate = document.getElementById("LastUpdate")
+	var timePassed = getTimeElapsed(lastCommit.commit.author.date);
+	lastUpdate.append("Site updated " + timePassed + " (" + message + ")");
 }
 request.open("GET", "https://api.github.com/repos/frostatom/atom_se.github.io/commits", true);
 request.send();
+
+function getTimeElapsed(from) {
+	from = new Date(from);
+	var to = new Date();
+	var diff = new Date(to - from);
+	if (diff.getMonth() > 0) {
+		return diff.getMonth() + " months ago";
+	} else if ((diff.getDate()-1) > 0) {
+		return diff.getDate() + " days ago";
+	} else if (diff.getHours() > 0) {
+		return diff.getHours() + " hours ago";
+	} else if (diff.getMinutes() > 5) {
+		return diff.getMinutes() + " minutes ago"
+	} else {
+		return "Just now";
+	}
+}
