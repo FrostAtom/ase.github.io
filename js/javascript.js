@@ -55,14 +55,14 @@ function getTimeElapsed(from) {
 	from = new Date(from);
 	var to = new Date();
 	var diff = new Date(to - from);
-	if (diff.getMonth() > 0) {
-		return diff.getMonth() + " months ago";
-	} else if ((diff.getDate()-1) > 0) {
-		return diff.getDate() + " days ago";
-	} else if (diff.getHours() > 0) {
-		return diff.getHours() + " hours ago";
-	} else if (diff.getMinutes() > 5) {
-		return diff.getMinutes() + " minutes ago"
+	if (diff.getUTCMonth() > 0) {
+		return diff.getUTCMonth() + " months ago";
+	} else if ((diff.getUTCDate()-1) > 0) {
+		return diff.getUTCDate() + " days ago";
+	} else if (diff.getUTCHours() > 0) {
+		return diff.getUTCHours() + " hours ago";
+	} else if (diff.getUTCMinutes() > 5) {
+		return diff.getUTCMinutes() + " minutes ago"
 	} else {
 		return "Just now";
 	}
