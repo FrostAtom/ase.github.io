@@ -1,9 +1,7 @@
-/*
-	Matrix
-*/
+/* Matrix */
 const c = document.getElementById("matrix");
 const ctx = c.getContext("2d");
-var charset = "0123456789*\\?/|!@#$%^&():\"'[]~,.ABCDEFGHIJKLMNOPQRSTUVWXYZ    ";
+var charset = "ABCČĆDĐEFGHIJKLMNOPQRSŠTUVWXYZŽabcčćdđefghijklmnopqrsštuvwxyzžАБВГҐДЂЕЁЄЖЗЅИІЇЙЈКЛЉМНЊОПРСТЋУЎФХЦЧЏШЩЪЫЬЭЮЯабвгґдђеёєжзѕиіїйјклљмнњопрстћуўфхцчџшщъыьэюяΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψω1234567890‘?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.* ";
 charset = charset.split("");
 const columns = 120;
 var drops = [];
@@ -36,9 +34,7 @@ function draw() {
 	}
 }
 
-/*
-	Last Update
-*/
+/* Last Update */
 const request = new XMLHttpRequest();
 request.onload = function () {
 	var json = JSON.parse(this.responseText);
@@ -57,13 +53,13 @@ function getTimeElapsed(from) {
 	var diff = new Date(to - from);
 	if (diff.getUTCMonth() > 0) {
 		return diff.getUTCMonth() + " months ago";
-	} else if ((diff.getUTCDate()-1) > 0) {
+	} else if ((diff.getUTCDate() - 1) > 0) {
 		return diff.getUTCDate() + " days ago";
 	} else if (diff.getUTCHours() > 0) {
 		return diff.getUTCHours() + " hours ago";
 	} else if (diff.getUTCMinutes() > 5) {
 		return diff.getUTCMinutes() + " minutes ago"
 	} else {
-		return "Just now";
+		return "just now";
 	}
 }
